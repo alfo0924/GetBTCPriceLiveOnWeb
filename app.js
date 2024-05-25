@@ -7,15 +7,18 @@ const cors = require('cors');
 
 const app = express();
 
-// Middleware setup
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname))); // Serve static files from the root directory
 app.use(cors());
 
-// Database setup
+// Serve index.html from the root directory
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Database configuration
 const dbPath = path.join(__dirname, 'db', 'sqlite.db');
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
@@ -25,12 +28,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
     }
 });
 
-// Routes
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html')); // Serve the HTML file
-});
-
-// Search endpoint
+// Endpoint to query data
 app.get('/search', (req, res) => {
     const { startDate, endDate } = req.query;
     const query = `SELECT Date, Close, Volume FROM BTCUSD WHERE Date BETWEEN ? AND ?`;
@@ -50,22 +48,6 @@ app.get('/search', (req, res) => {
     });
 });
 
-// Insert data endpoint
-app.post('/insert', (req, res) => {
-    const { date, open, high, low, close, adj_close, volume } = req.body;
-    const insertSQL = `INSERT INTO BTCUSD (Date, Open, High, Low, Close, Adj_Close, Volume) VALUES (?, ?, ?, ?, ?, ?, ?)`;
-    db.run(insertSQL, [date, open, high, low, close, adj_close, volume], (err) => {
-        if (err) {
-            console.error('Error inserting data:', err.message);
-            res.status(500).json({ error: 'Internal server error' });
-        } else {
-            console.log('Data inserted successfully');
-            res.status(200).json({ message: 'Data inserted successfully' });
-        }
-    });
-});
-
-// Server setup
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
