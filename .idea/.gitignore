@@ -1,0 +1,8 @@
+# Default ignored files
+/../../GetBTCPriceLiveOnWeb /.idea/shelf/
+/../../GetBTCPriceLiveOnWeb /.idea/workspace.xml
+# Editor-based HTTP Client requests
+/../../GetBTCPriceLiveOnWeb /.idea/httpRequests/
+# Datasource local storage ignored files
+/../../GetBTCPriceLiveOnWeb /.idea/dataSources/
+/../../GetBTCPriceLiveOnWeb /.idea/dataSources.local.xml
