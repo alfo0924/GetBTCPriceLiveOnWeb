@@ -10,8 +10,10 @@
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 <!-- import jquery CDN-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
+<!--import google fonts CDN-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
 <!--  import logo-->
   <link rel="apple-touch-icon-precomposed" loading="lazy" sizes="144x144" href="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=032" aria-label="btcLogo in 144 times 144" alt="logo in paypal 144 times 144"  />
   <link rel="apple-touch-icon-precomposed" loading="lazy" sizes="114x114" href="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=032" aria-label="btcLogo in 144 times 144" alt="logo in paypal 114 times 114"  />
@@ -40,11 +42,18 @@
       font-weight: 700;
       font-size: 20px;
       color: rgb(35, 33, 33);
+      flex-grow: 1;
+
+      font-family: "Noto Sans TC", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
     }
     #pricesContainer
     {
       font-size: 15px;
     }
+
+
   </style>
 </head>
 <body>
@@ -101,7 +110,7 @@
 
 
 
-<h1 style="text-transform: uppercase;"><img loading="lazy" src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=032" height="150" width="auto"> Bitcoin/usd</h1>
+<h1 style="text-transform: uppercase;"><img loading="lazy" src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=032" height="100" width="auto"> Bitcoin/usd</h1>
 <div ><p id="price"></p></div>
 <div class="tradingview-widget-container">
   <div id="tradingview_12345"></div>
@@ -146,7 +155,7 @@
 
     // Display the selected date range
     var dateRangeElement = document.createElement('p');
-    dateRangeElement.textContent = `Date Range: ${startDate} to ${endDate}`;
+    dateRangeElement.textContent = `| 日期範圍 Date Range | : ${startDate} ~ ${endDate}`;
     pricesContainer.appendChild(dateRangeElement);
 
     // Display queried data
