@@ -157,7 +157,7 @@
     } else {
       data.forEach(price => {
         var priceElement = document.createElement('p');
-        priceElement.textContent = `| 日期 Date | : ${price.Date} | 收盤價 Close Price | : ${price.Close} | 量 Volume | : ${price.Volume}`;
+        priceElement.textContent = `| 日期 Date | : ${price.Date} | 收盤價 Close Price | : ${price.Close} | 成交量 Volume | : ${price.Volume}`;
         pricesContainer.appendChild(priceElement);
       });
     }
