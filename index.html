@@ -176,8 +176,6 @@
   function getBitcoinPrice() {
     $.get("https://api.coindesk.com/v1/bpi/currentprice.json", function(data) {
       var price = data.bpi.USD.rate;
-      var change = data.bpi.USD.change;
-      var changePercent = data.bpi.USD.changesPercentage;
       $("#price").html(price + " usd" );
     });
   }
