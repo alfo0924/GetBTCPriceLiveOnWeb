@@ -172,9 +172,7 @@
     container_id: "tradingview_12345"
   });
 
-
   //btc live price
-
   function getBitcoinPrice() {
     $.get("https://api.coindesk.com/v1/bpi/currentprice.json", function(data) {
       var price = data.bpi.USD.rate;
