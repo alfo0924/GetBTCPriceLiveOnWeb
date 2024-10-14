@@ -43,7 +43,7 @@
 
 ### 功能概述
 
-作品頁面是一個用於顯示Bitcoin/USD價格數據的網站[2][4]。
+作品頁面是一個用於顯示Bitcoin/USD價格數據的網站。
 
 ### 主要功能
 
@@ -66,14 +66,7 @@
 
 ### 技術實現
 
-- 使用Express.js作為後端框架[1]
-- 採用SQLite作為數據庫[1]
-- 前端使用HTML和JavaScript實現用戶界面和交互[1]
+- 使用Express.js作為後端框架
+- 採用SQLite作為數據庫
+- 前端使用HTML和JavaScript實現用戶界面和交互
 
-這個項目展示了如何從數據源獲取Bitcoin價格數據，並通過Web應用程序呈現給用戶。它結合了後端數據處理和前端展示，是一個完整的全棧Web開發示例。
-
-Citations:
-[1] https://alfo0924.github.io/GetBTCPriceWebDescription/
-[2] https://getbtcpriceliveonweb.onrender.com
-[3] https://alfo0924.github.io/GetBTCPriceWebDescription/
-[4] https://getbtcpriceliveonweb.onrender.com
