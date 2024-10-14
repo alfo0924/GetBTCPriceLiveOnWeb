@@ -1,3 +1,9 @@
+
+<a href="https://getbtcpriceliveonweb.onrender.com/">作品明頁</a>
+
+<a href="https://alfo0924.github.io/GetBTCPriceWebDescription/">作品說明頁</a>
+
+
 ## 作品說明頁分析
 
 ### 架設CPI網站流程
